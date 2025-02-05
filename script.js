@@ -1,7 +1,7 @@
 // Initialize the map
 const map = L.map('map', {
   crs: L.CRS.Simple,
-  minZoom: 0,
+  minZoom: -2,
   maxZoom: 7
 });
 
@@ -67,21 +67,21 @@ map.on('zoomend', () => {
   console.log("Current zoom level:", zoomLevel);
 
   // Handle Regions (low zoom levels)
-  if (zoomLevel >= 0 && zoomLevel <= 2) {
+  if (zoomLevel <= 1) {
     if (!map.hasLayer(regionLayer)) map.addLayer(regionLayer);
   } else {
     if (map.hasLayer(regionLayer)) map.removeLayer(regionLayer);
   }
 
   // Handle Cities (medium zoom levels)
-  if (zoomLevel >= 2 && zoomLevel <= 4) {
+  if (zoomLevel >= 3 && zoomLevel <= 5) {
     if (!map.hasLayer(cityLayer)) map.addLayer(cityLayer);
   } else {
     if (map.hasLayer(cityLayer)) map.removeLayer(cityLayer);
   }
 
   // Handle Dungeons (high zoom levels)
-  if (zoomLevel >= 4) {
+  if (zoomLevel >= 5) {
     if (!map.hasLayer(dungeonLayer)) map.addLayer(dungeonLayer);
   } else {
     if (map.hasLayer(dungeonLayer)) map.removeLayer(dungeonLayer);
