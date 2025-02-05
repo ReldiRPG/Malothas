@@ -50,8 +50,6 @@ fetch('pois.json')
   .catch(error => console.error('Error loading POI data:', error));
 // Add layers to the map
 regionLayer.addTo(map);
-cityLayer.addTo(map);
-dungeonLayer.addTo(map);
 
 // Show or hide layers based on zoom level
 map.on('zoomend', () => {
