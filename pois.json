@@ -6,8 +6,7 @@
       "coordinates": [600, 900],
       "description": "A mist-shrouded region with foreboding landscapes.",
       "icon": "icons/region.png",
-      "minZoom": 0,
-      "maxZoom": 3,
+      "iconSize": [64, 64],
       "link": ""
     },
     {
@@ -16,8 +15,7 @@
       "coordinates": [300, 400],
       "description": "A small, mist-shrouded village.",
       "icon": "icons/city.png",
-      "minZoom": 4,
-      "maxZoom": 6,
+      "iconSize": [32, 32],
       "link": "village-barovia.html"
     },
     {
@@ -26,8 +24,7 @@
       "coordinates": [500, 1000],
       "description": "The infamous castle of Strahd.",
       "icon": "icons/dungeon.png",
-      "minZoom": 7,
-      "maxZoom": 18,
+      "iconSize": [32, 32],
       "link": "castle-ravenloft.html"
     }
   ]
