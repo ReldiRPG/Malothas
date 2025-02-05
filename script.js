@@ -53,7 +53,8 @@ regionLayer.addTo(map);
 
 // Show or hide layers based on zoom level
 map.on('zoomend', () => {
-  const zoomLevel = map.getZoom();
+  const zoomLevel = Math.round(map.getZoom());
+  console.log("Current zoom level:", zoomLevel);
 
   // Handle Regions (low zoom levels)
   if (zoomLevel >= 0 && zoomLevel <= 3) {
