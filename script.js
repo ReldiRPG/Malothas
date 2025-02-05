@@ -25,10 +25,6 @@ fetch('pois.json')
       console.log('Loading icon:', poi.icon);
       // Use the POI-defined icon size or a default size if not specified
       const size = poi.iconSize || [32, 32];
-
-      // Optionally, adjust the iconAnchor based on the icon size. 
-      // For instance, [size[0] / 2, size[1]] will center the icon horizontally 
-      // and position the bottom at the point.
       const icon = L.icon({
         iconUrl: poi.icon,
         iconSize: size,
@@ -67,21 +63,21 @@ map.on('zoomend', () => {
   console.log("Current zoom level:", zoomLevel);
 
   // Handle Regions (low zoom levels)
-  if (zoomLevel >= 0 && zoomLevel <= 3) { {
+  if (zoomLevel >= 0 && zoomLevel <= 3) {
     if (!map.hasLayer(regionLayer)) map.addLayer(regionLayer);
   } else {
     if (map.hasLayer(regionLayer)) map.removeLayer(regionLayer);
   }
 
   // Handle Cities (medium zoom levels)
-  if (zoomLevel >= 2 && zoomLevel <= 5) {
+  if (zoomLevel >= 4 && zoomLevel <= 6) {
     if (!map.hasLayer(cityLayer)) map.addLayer(cityLayer);
   } else {
     if (map.hasLayer(cityLayer)) map.removeLayer(cityLayer);
   }
 
   // Handle Dungeons (high zoom levels)
-  if (zoomLevel >= 5) {
+  if (zoomLevel >= 7) {
     if (!map.hasLayer(dungeonLayer)) map.addLayer(dungeonLayer);
   } else {
     if (map.hasLayer(dungeonLayer)) map.removeLayer(dungeonLayer);
