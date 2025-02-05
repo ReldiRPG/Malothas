@@ -1,7 +1,7 @@
 // Initialize the map
 const map = L.map('map', {
   crs: L.CRS.Simple,
-  minZoom: -2,
+  minZoom: -7,
   maxZoom: 7
 });
 
@@ -74,7 +74,7 @@ map.on('zoomend', () => {
   }
 
   // Handle Cities (medium zoom levels)
-  if (zoomLevel >= 3 && zoomLevel <= 5) {
+  if (zoomLevel >= 1 && zoomLevel <= 5) {
     if (!map.hasLayer(cityLayer)) map.addLayer(cityLayer);
   } else {
     if (map.hasLayer(cityLayer)) map.removeLayer(cityLayer);
