@@ -67,21 +67,21 @@ map.on('zoomend', () => {
   console.log("Current zoom level:", zoomLevel);
 
   // Handle Regions (low zoom levels)
-  if (zoomLevel >= 0 && zoomLevel <= 3) {
+  if (zoomLevel >= 0 && zoomLevel <= 2) {
     if (!map.hasLayer(regionLayer)) map.addLayer(regionLayer);
   } else {
     if (map.hasLayer(regionLayer)) map.removeLayer(regionLayer);
   }
 
   // Handle Cities (medium zoom levels)
-  if (zoomLevel >= 2 && zoomLevel <= 6) {
+  if (zoomLevel >= 2 && zoomLevel <= 4) {
     if (!map.hasLayer(cityLayer)) map.addLayer(cityLayer);
   } else {
     if (map.hasLayer(cityLayer)) map.removeLayer(cityLayer);
   }
 
   // Handle Dungeons (high zoom levels)
-  if (zoomLevel >= 5) {
+  if (zoomLevel >= 4) {
     if (!map.hasLayer(dungeonLayer)) map.addLayer(dungeonLayer);
   } else {
     if (map.hasLayer(dungeonLayer)) map.removeLayer(dungeonLayer);
