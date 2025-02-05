@@ -49,7 +49,9 @@ fetch('pois.json')
   })
   .catch(error => console.error('Error loading POI data:', error));
 // Add layers to the map
-regionLayer.addTo(map);
+// After map.fitBounds or map.setView, trigger the zoomend event handler manually:
+map.fire('zoomend');
+
 
 // Show or hide layers based on zoom level
 map.on('zoomend', () => {
