@@ -10,6 +10,7 @@ const mapBounds = [[0, 0], [1200, 1800]]; // Adjust to your map dimensions
 const imageUrl = 'Malosthas_Map.svg'; // Replace with your map image
 L.imageOverlay(imageUrl, mapBounds).addTo(map);
 map.fitBounds(mapBounds);
+map.fire('zoomend');
 
 // Layer groups for different POI categories
 const regionLayer = L.layerGroup();
@@ -48,9 +49,10 @@ fetch('pois.json')
     });
   })
   .catch(error => console.error('Error loading POI data:', error));
-// Add layers to the map
-// After map.fitBounds or map.setView, trigger the zoomend event handler manually:
-map.fire('zoomend');
+// Show hide layers on move
+map.on('moveend', () => {
+  map.fire('zoomend');
+});
 
 
 // Show or hide layers based on zoom level
@@ -79,6 +81,9 @@ map.on('zoomend', () => {
     if (map.hasLayer(dungeonLayer)) map.removeLayer(dungeonLayer);
   }
 });
+
+
+
 
 // Check for zoom and coordinate parameters in the URL
 const params = new URLSearchParams(window.location.search);
