@@ -12,7 +12,7 @@ const imageUrl = 'Malosthas_Map.svg'; // Replace with your map image
 L.imageOverlay(imageUrl, mapBounds).addTo(map);
 map.fitBounds(mapBounds);
 map.whenReady(() => {
-  map.setZoom(0);
+  map.setZoom(-1);
 });
 map.fire('zoomend');
 
