@@ -1,0 +1,34 @@
+{
+  "pois": [
+    {
+      "name": "Barovia Region",
+      "type": "region",
+      "coordinates": [600, 900],
+      "description": "A mist-shrouded region with foreboding landscapes.",
+      "icon": "icons/region.png",
+      "minZoom": 0,
+      "maxZoom": 3,
+      "link": ""
+    },
+    {
+      "name": "Village of Barovia",
+      "type": "city",
+      "coordinates": [300, 400],
+      "description": "A small, mist-shrouded village.",
+      "icon": "icons/city.png",
+      "minZoom": 4,
+      "maxZoom": 6,
+      "link": "village-barovia.html"
+    },
+    {
+      "name": "Castle Ravenloft",
+      "type": "dungeon",
+      "coordinates": [500, 1000],
+      "description": "The infamous castle of Strahd.",
+      "icon": "icons/dungeon.png",
+      "minZoom": 7,
+      "maxZoom": 18,
+      "link": "castle-ravenloft.html"
+    }
+  ]
+}
