@@ -1,7 +1,7 @@
 // Initialize the map
 const map = L.map('map', {
   crs: L.CRS.Simple,
-  minZoom: -7,
+  minZoom: -4,
   maxZoom: 7
 });
 
@@ -67,14 +67,14 @@ map.on('zoomend', () => {
   console.log("Current zoom level:", zoomLevel);
 
   // Handle Regions (low zoom levels)
-  if (zoomLevel <= 1) {
+  if (zoomLevel <= 2) {
     if (!map.hasLayer(regionLayer)) map.addLayer(regionLayer);
   } else {
     if (map.hasLayer(regionLayer)) map.removeLayer(regionLayer);
   }
 
   // Handle Cities (medium zoom levels)
-  if (zoomLevel >= 1 && zoomLevel <= 5) {
+  if (zoomLevel >= 2 && zoomLevel <= 5) {
     if (!map.hasLayer(cityLayer)) map.addLayer(cityLayer);
   } else {
     if (map.hasLayer(cityLayer)) map.removeLayer(cityLayer);
