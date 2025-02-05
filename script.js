@@ -24,8 +24,8 @@ fetch('pois.json')
       console.log('Loading icon:', poi.icon);
       const icon = L.icon({
         iconUrl: poi.icon,
-        iconSize: [64, 64],
-        iconAnchor: [32, 64]
+        iconSize: [32, 32],
+        iconAnchor: [16, 32]
       });
 
       // Build the popup content dynamically
@@ -59,7 +59,7 @@ map.on('zoomend', () => {
   console.log("Current zoom level:", zoomLevel);
 
   // Handle Regions (low zoom levels)
-  if (zoomLevel >= 0 && zoomLevel <= 3) {
+  if (zoomLevel >= 0 && zoomLevel <= 4) {
     if (!map.hasLayer(regionLayer)) map.addLayer(regionLayer);
   } else {
     if (map.hasLayer(regionLayer)) map.removeLayer(regionLayer);
@@ -73,7 +73,7 @@ map.on('zoomend', () => {
   }
 
   // Handle Dungeons (high zoom levels)
-  if (zoomLevel >= 7) {
+  if (zoomLevel >= 6) {
     if (!map.hasLayer(dungeonLayer)) map.addLayer(dungeonLayer);
   } else {
     if (map.hasLayer(dungeonLayer)) map.removeLayer(dungeonLayer);
