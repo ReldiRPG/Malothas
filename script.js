@@ -11,7 +11,9 @@ const mapBounds = [[0, 0], [2160, 3230]]; // Adjust to your map dimensions
 const imageUrl = 'Malosthas_Map.svg'; // Replace with your map image
 L.imageOverlay(imageUrl, mapBounds).addTo(map);
 map.fitBounds(mapBounds);
-map.getZoom()
+map.whenReady(() => {
+  map.setZoom(0);
+});
 map.fire('zoomend');
 
 // Layer groups for different POI categories
@@ -65,21 +67,21 @@ map.on('zoomend', () => {
   console.log("Current zoom level:", zoomLevel);
 
   // Handle Regions (low zoom levels)
-  if (zoomLevel >= -2 && zoomLevel <= 1) {
+  if (zoomLevel >= -2 && zoomLevel <= 0) {
     if (!map.hasLayer(regionLayer)) map.addLayer(regionLayer);
   } else {
     if (map.hasLayer(regionLayer)) map.removeLayer(regionLayer);
   }
 
   // Handle Cities (medium zoom levels)
-  if (zoomLevel >= 0 && zoomLevel <= 4) {
+  if (zoomLevel >= -1 && zoomLevel <= 4) {
     if (!map.hasLayer(cityLayer)) map.addLayer(cityLayer);
   } else {
     if (map.hasLayer(cityLayer)) map.removeLayer(cityLayer);
   }
 
   // Handle Dungeons (high zoom levels)
-  if (zoomLevel >= 4) {
+  if (zoomLevel >= 2) {
     if (!map.hasLayer(dungeonLayer)) map.addLayer(dungeonLayer);
   } else {
     if (map.hasLayer(dungeonLayer)) map.removeLayer(dungeonLayer);
