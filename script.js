@@ -7,7 +7,7 @@ const map = L.map('map', {
 
 // Define map bounds and add the overlay image
 const mapBounds = [[0, 0], [2160, 3240]]; // Adjust to your map dimensions
-const imageUrl = 'Malosthas_Map.svg'; // Replace with your map image
+const imageUrl = 'Malosthas_Map.jpg'; // Replace with your map image
 L.imageOverlay(imageUrl, mapBounds).addTo(map);
 map.fitBounds(mapBounds);
 map.fire('zoomend');
