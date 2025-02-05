@@ -1,7 +1,7 @@
 // Initialize the map
 const map = L.map('map', {
   crs: L.CRS.Simple,
-  minZoom: -4,
+  minZoom: -1,
   maxZoom: 7
 });
 
