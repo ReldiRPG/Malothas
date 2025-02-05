@@ -23,10 +23,16 @@ fetch('pois.json')
   .then(data => {
     data.pois.forEach(poi => {
       console.log('Loading icon:', poi.icon);
+      // Use the POI-defined icon size or a default size if not specified
+      const size = poi.iconSize || [32, 32];
+
+      // Optionally, adjust the iconAnchor based on the icon size. 
+      // For instance, [size[0] / 2, size[1]] will center the icon horizontally 
+      // and position the bottom at the point.
       const icon = L.icon({
         iconUrl: poi.icon,
-        iconSize: [32, 32],
-        iconAnchor: [16, 32]
+        iconSize: size,
+        iconAnchor: [size[0] / 2, size[1]]
       });
 
       // Build the popup content dynamically
