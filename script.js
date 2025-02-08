@@ -1,5 +1,5 @@
 // Define map bounds
-const mapBounds = [[0, 0], [2160, 3230]]; // Adjust to your map dimensions
+const mapBounds = [[0, 0], [2708, 4198]]; // Adjust to your map dimensions
 // Initialize the map
 const map = L.map('map', {
   crs: L.CRS.Simple,
@@ -11,7 +11,7 @@ const map = L.map('map', {
 
 
 // Add the overlay image to map bounds
-const imageUrl = 'Malosthas_Map.svg'; // Replace with your map image
+const imageUrl = 'Map.webp'; // Replace with your map image
 L.imageOverlay(imageUrl, mapBounds).addTo(map);
 map.fitBounds(mapBounds);
 map.whenReady(() => {
