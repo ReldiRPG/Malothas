@@ -5,7 +5,7 @@ const map = L.map('map', {
   crs: L.CRS.Simple,
   minZoom: -2,
   maxZoom: 7,
-  maxBounds: bounds,            // Sets the pan extent.
+  maxBounds: mapBounds,            // Sets the pan extent.
   maxBoundsViscosity: 1.0
 });
 
