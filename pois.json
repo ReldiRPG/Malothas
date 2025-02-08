@@ -16,7 +16,7 @@
       "description": "Regular Icon at Second Zoom Levels",
       "icon": "icons/city.png",
       "iconSize": [32, 32],
-      "link": "village-barovia.html"
+      "link": "#300400"
     },
     {
       "name": "Regular Icon",
@@ -25,7 +25,7 @@
       "description": "Regular Icon set at the Third Zoom Levels",
       "icon": "icons/dungeon.png",
       "iconSize": [32, 32],
-      "link": "castle-ravenloft.html"
+      "link": "#5001000"
     },
     {
       "name": "Large Icon",
@@ -43,7 +43,7 @@
       "description": "Regular Icon at Second Zoom Levels",
       "icon": "icons/city.png",
       "iconSize": [32, 32],
-      "link": "village-barovia.html"
+      "link": "#13001400"
     },
     {
       "name": "Regular Icon",
@@ -52,7 +52,7 @@
       "description": "Regular Icon set at the Third Zoom Levels",
       "icon": "icons/dungeon.png",
       "iconSize": [32, 32],
-      "link": "castle-ravenloft.html"
+      "link": "#15002000"
     },
     {
       "name": "Large Icon",
@@ -70,7 +70,7 @@
       "description": "Regular Icon at Second Zoom Levels",
       "icon": "icons/city.png",
       "iconSize": [32, 32],
-      "link": "village-barovia.html"
+      "link": "#20002400"
     },
     {
       "name": "Regular Icon",
@@ -79,7 +79,7 @@
       "description": "Regular Icon set at the Third Zoom Levels",
       "icon": "icons/dungeon.png",
       "iconSize": [32, 32],
-      "link": "castle-ravenloft.html"
+      "link": "#21003000"
     }
   ]
 }
