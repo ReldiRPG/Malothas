@@ -1,11 +1,12 @@
 // Calculate and set the --vh custom property for mobile viewport height
+/*
 function setVh() {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
 window.addEventListener('resize', setVh);
 setVh();
-
+*/
 // Define map bounds
 const mapBounds = [[0, 0], [2800, 4200]]; // Adjust to your map dimensions
 // Initialize the map
