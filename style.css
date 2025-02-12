@@ -58,7 +58,7 @@ html, body {
   }
   /* Adjust close button for bottom panel, if desired */
   .close-btn {
-    top: 5px;
-    right: 50%;
+    top: 5%;
+    right: 5%;
     transform: translateX(49%);
 }
