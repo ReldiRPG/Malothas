@@ -65,9 +65,16 @@ fetch('pois.json')
       if (poi.link) {
         popupContent += `<br><a href="${poi.link}?zoom=${map.getZoom()}&x=${poi.coordinates[0]}&y=${poi.coordinates[1]}">Learn More</a>`;
       }
+      
+      // Create the marker without binding a popup
+      const marker = L.marker(poi.coordinates, { icon });
+      marker.addTo(map);
+      
+      // Add custom click event to update the side panel
+      marker.on('click', function() {
+        showSidePanel(popupContent);
+      });
 
-      const marker = L.marker(poi.coordinates, { icon })
-        .bindPopup(popupContent);
 
       // Add marker to the appropriate layer based on its type
       if (poi.type === 'region') {
@@ -121,10 +128,3 @@ function showSidePanel(content) {
 document.getElementById('close-panel').addEventListener('click', function() {
   document.getElementById('side-panel').classList.remove('open');
 });
-
-// Example for a marker or overlay click event:
-marker.on('click', function(e) {
-  const content = "<h2>" + poi.name + "</h2><p>" + poi.description + "</p>";
-  showSidePanel(content);
-});
-
