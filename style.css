@@ -60,5 +60,5 @@ html, body {
   .close-btn {
     top: 5%;
     right: 5%;
-    transform: translateX(49%);
+    // transform: translateX(49%);
 }
