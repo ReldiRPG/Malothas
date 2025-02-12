@@ -85,21 +85,6 @@ map.on('moveend', () => {
   map.fire('zoomend');
 });
 
-function showSidePanel(content) {
-  document.getElementById('popup-content').innerHTML = content;
-  document.getElementById('side-panel').classList.add('open');
-}
-
-document.getElementById('close-panel').addEventListener('click', function() {
-  document.getElementById('side-panel').classList.remove('open');
-});
-
-// Example for a marker or overlay click event:
-marker.on('click', function(e) {
-  const content = "<h2>" + poi.name + "</h2><p>" + poi.description + "</p>";
-  showSidePanel(content);
-});
-
 
 // Show or hide layers based on zoom level
 map.on('zoomend', () => {
@@ -127,3 +112,19 @@ map.on('zoomend', () => {
     if (map.hasLayer(dungeonLayer)) map.removeLayer(dungeonLayer);
   }
 });
+
+function showSidePanel(content) {
+  document.getElementById('popup-content').innerHTML = content;
+  document.getElementById('side-panel').classList.add('open');
+}
+
+document.getElementById('close-panel').addEventListener('click', function() {
+  document.getElementById('side-panel').classList.remove('open');
+});
+
+// Example for a marker or overlay click event:
+marker.on('click', function(e) {
+  const content = "<h2>" + poi.name + "</h2><p>" + poi.description + "</p>";
+  showSidePanel(content);
+});
+
