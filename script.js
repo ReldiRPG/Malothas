@@ -23,10 +23,23 @@ const map = L.map('map', {
 const imageUrl = 'Map.webp'; // Replace with your map image
 L.imageOverlay(imageUrl, mapBounds).addTo(map);
 map.fitBounds(mapBounds);
-map.whenReady(() => {
-  map.setZoom(-1);
-  map.fire('zoomend'); // Fire zoomend after the zoom has been set.
-});
+
+// Get URL parameters
+const params = new URLSearchParams(window.location.search);
+const zoomParam = params.get('zoom');
+const xParam = params.get('x');
+const yParam = params.get('y');
+
+if (zoomParam && xParam && yParam) {
+  // If URL parameters exist, set the view accordingly
+  map.setView([xParam, yParam], parseInt(zoomParam));
+} else {
+  // Otherwise, use the default zoom level
+  map.whenReady(() => {
+    map.setZoom(-1);
+    map.fire('zoomend');
+  });
+}
 
 // Layer groups for different POI categories
 const regionLayer = L.layerGroup();
