@@ -22,6 +22,11 @@ html, body {
   padding: 20px;
 }
 
+.close-btn {
+  font-size: 24px;
+  cursor: pointer;
+}
+
 /* Desktop and tablet: panel slides in from the right */
 @media (min-width: 768px) {
   .side-panel {
@@ -53,8 +58,7 @@ html, body {
   }
   /* Adjust close button for bottom panel, if desired */
   .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
+    top: 5px;
+    right: 50%;
+    transform: translateX(50%);
 }
