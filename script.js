@@ -6,7 +6,6 @@ function setVh() {
 window.addEventListener('resize', setVh);
 setVh();
 
-
 // Define map bounds
 const mapBounds = [[0, 0], [2800, 4200]]; // Adjust to your map dimensions
 // Initialize the map
