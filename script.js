@@ -16,8 +16,8 @@ L.imageOverlay(imageUrl, mapBounds).addTo(map);
 map.fitBounds(mapBounds);
 map.whenReady(() => {
   map.setZoom(-1);
+  map.fire('zoomend'); // Fire zoomend after the zoom has been set.
 });
-map.fire('zoomend');
 
 // Layer groups for different POI categories
 const regionLayer = L.layerGroup();
