@@ -112,16 +112,3 @@ map.on('zoomend', () => {
     if (map.hasLayer(dungeonLayer)) map.removeLayer(dungeonLayer);
   }
 });
-
-
-
-
-// Check for zoom and coordinate parameters in the URL
-const params = new URLSearchParams(window.location.search);
-const zoom = params.get('zoom');
-const x = params.get('x');
-const y = params.get('y');
-
-if (zoom && x && y) {
-  map.setView([x, y], parseInt(zoom)); // Move to the specific location
-}
